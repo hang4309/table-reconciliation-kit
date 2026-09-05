@@ -72,3 +72,9 @@ MIT licensed; preserve the copyright notice in `LICENSE`. See [THIRD_PARTY.md](T
 ## 中文说明
 
 用途是把两份数据里需要核对的地方找出来。可以自行下载运行，也可以通过上方需求入口说明字段、行数和希望得到的结果。页面与案例采用合成库存数据，没有客户交易或虚构的省时成绩。接手已有文件时，先确认字段映射和记录键，再核对样本；有争议的记录保留人工决定。
+
+## 看案例与真实操作
+
+[六图、36秒讲解和实际工具录屏](https://hang4309.github.io/table-reconciliation-kit/learn/equal-totals/) · [内容及输入下载包](https://github.com/hang4309/table-reconciliation-kit/releases/download/v0.3.0/equal-totals-content-v0.3.0.zip)
+
+相同的35合计为何仍有三处明细待处理：六行合成输入、真实导出结果、可改编图文和各渠道投稿稿。视频无音轨；AI辅助制作，没有客户效果或收益声明。

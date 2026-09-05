@@ -1,1 +1,4 @@
 docs/csv-diff/index.html -text whitespace=cr-at-eol
+
+docs/learn/equal-totals/** -text
+docs/learn/equal-totals/example-export.csv -text whitespace=cr-at-eol

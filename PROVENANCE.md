@@ -7,3 +7,7 @@ The original code was generated in a pipeline using Codex models. This publicati
 The sample CSV/JSON inventory records and the case study were created for this publication work. They do not contain customer data. No private production handoff, account information, local-machine paths, historical state, archive manifest or original demand text is included.
 
 Source comments and inherited features remain subject to review before further use. This publication is not a full security audit, financial certification, or verification of every format and review action in the engine.
+
+## Browser entry added in v0.2.0
+
+The browser CSV tool in `docs/csv-diff` is newly written JavaScript with its own MIT notice and provenance. The inherited `dqrdesk` source files and root MIT notice are unchanged. See [browser provenance](docs/csv-diff/PROVENANCE.md) for its narrower scope and validation.

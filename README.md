@@ -2,7 +2,19 @@
 
 **Find differences between two data exports—even when their totals match.**
 
-Offline Python tooling, a reproducible example, and a short visual case study. No account, API key, model or subscription is needed to run the example. Runtime code uses the Python standard library.
+Compare small CSV exports in your browser, or use the Python workflow for configured reconciliation and reports. No account, API key, model or subscription is required.
+
+## Compare two CSV files without installing anything
+
+[Open the browser tool / 浏览器直接使用](https://hang4309.github.io/table-reconciliation-kit/csv-diff/) · [Download the offline browser package](https://github.com/hang4309/table-reconciliation-kit/releases/download/v0.2.0/csv-diff-browser-v0.2.0.zip)
+
+The interface is in Chinese. Select two UTF-8 CSV files, map their key columns and up to three comparison-column pairs, then review matched, different, one-sided and ambiguous records. Files stay in the current browser. Blank or duplicate keys require manual review; values are compared as exact text. Maximum declared input: 5 MiB and 10,000 data records per file.
+
+The browser tool is a separate, narrow JavaScript implementation. It does not support XLSX, JSON, fuzzy matching, numeric tolerances or the Python engine’s review workflow. [Instructions and validation limits](docs/csv-diff/README.md) · [Browser tool provenance](docs/csv-diff/PROVENANCE.md).
+
+## Python workflow
+
+The original reproducible Python example remains available. Its runtime uses the Python standard library.
 
 ## Try the example
 

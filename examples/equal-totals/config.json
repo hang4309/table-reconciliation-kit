@@ -1,0 +1,128 @@
+{
+  "project": "Equal totals, different records (synthetic inventory example)",
+  "schema": {
+    "fields": [
+      {
+        "name": "sku",
+        "label": "SKU",
+        "type": "string",
+        "required": true,
+        "normalizers": [
+          "nfkc",
+          "strip",
+          "upper",
+          "alnum"
+        ]
+      },
+      {
+        "name": "location",
+        "label": "库位",
+        "type": "string",
+        "required": true,
+        "normalizers": [
+          "nfkc",
+          "strip",
+          "upper",
+          "alnum"
+        ]
+      },
+      {
+        "name": "item_name",
+        "label": "品名",
+        "type": "string",
+        "required": true,
+        "normalizers": [
+          "nfkc",
+          "strip",
+          "casefold",
+          "collapse_space"
+        ]
+      },
+      {
+        "name": "quantity",
+        "label": "数量",
+        "type": "integer",
+        "required": true,
+        "resolution": "source_priority"
+      },
+      {
+        "name": "lot",
+        "label": "批号",
+        "type": "string",
+        "required": false
+      },
+      {
+        "name": "note",
+        "label": "备注",
+        "type": "string",
+        "required": false
+      }
+    ]
+  },
+  "match": {
+    "exact_keys": [
+      [
+        "sku",
+        "location"
+      ]
+    ],
+    "normalized_keys": [
+      [
+        "sku",
+        "location"
+      ]
+    ],
+    "fuzzy_fields": [],
+    "auto_threshold": "0.94",
+    "review_threshold": "0.80",
+    "tie_margin": "0.04"
+  },
+  "conflict_fields": [
+    "quantity",
+    "lot"
+  ],
+  "amount_fields": [
+    "quantity"
+  ],
+  "balance_checks": [
+    {
+      "name": "inventory_total_units",
+      "field": "quantity",
+      "sources": [
+        "wms",
+        "erp_stock"
+      ],
+      "tolerance": "0"
+    }
+  ],
+  "sources": [
+    {
+      "id": "wms",
+      "path": "wms.csv",
+      "format": "csv",
+      "priority": 1,
+      "mapping": {
+        "SKU": "sku",
+        "Bin": "location",
+        "Description": "item_name",
+        "On Hand": "quantity",
+        "Lot": "lot",
+        "Note": "note"
+      }
+    },
+    {
+      "id": "erp_stock",
+      "path": "erp_stock.json",
+      "format": "json",
+      "priority": 2,
+      "mapping": {
+        "item_code": "sku",
+        "warehouse": "location",
+        "item": "item_name",
+        "book_qty": "quantity",
+        "batch": "lot",
+        "remark": "note"
+      }
+    }
+  ]
+}

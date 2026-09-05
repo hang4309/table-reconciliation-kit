@@ -1,0 +1,26 @@
+[
+  {
+    "item_code": "A001",
+    "warehouse": "TPE",
+    "item": "alpha",
+    "book_qty": 10,
+    "batch": "L1",
+    "remark": "same"
+  },
+  {
+    "item_code": "B002",
+    "warehouse": "TPE",
+    "item": "beta",
+    "book_qty": 18,
+    "batch": "L1",
+    "remark": "quantity conflict"
+  },
+  {
+    "item_code": "D004",
+    "warehouse": "TPE",
+    "item": "purple",
+    "book_qty": 7,
+    "batch": "L1",
+    "remark": "erp only"
+  }
+]

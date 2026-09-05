@@ -1,0 +1,40 @@
+name: Request a reconciliation report
+description: Describe a small data comparison job using headers and synthetic examples only.
+title: "[Reconciliation request] "
+body:
+  - type: markdown
+    attributes:
+      value: "This issue is public. Do not attach private files, customer records, credentials or payment information. A request is a scope discussion, not a booked service."
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What result do you need?
+      description: "For example: identify quantity conflicts and SKUs present in only one export."
+    validations:
+      required: true
+  - type: input
+    id: size
+    attributes:
+      label: Formats and approximate row counts
+      placeholder: "Two CSV exports, about 500 rows each"
+    validations:
+      required: true
+  - type: textarea
+    id: columns
+    attributes:
+      label: Column names and proposed shared key
+      description: "Use headers and made-up values only. Say if a unique key is unknown."
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: What would make the output useful?
+      description: "Expected files, known edge cases, and your preferred timing. No delivery time is committed by submitting."
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Public issue confirmation
+      options:
+        - label: "I have not included private records, secrets or payment details."
+          required: true

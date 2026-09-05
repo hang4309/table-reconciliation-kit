@@ -1,0 +1,4 @@
+﻿SKU,Bin,Description,On Hand,Lot,Note
+A001,TPE,alpha,10,L1,same
+B002,TPE,beta,20,L1,quantity conflict
+C003,TPE,orange,5,L1,wms only

@@ -6,14 +6,14 @@
   <title>两张表总量都是35，为什么仍对不上？</title>
   <style>
     :root { --ink:#172033; --muted:#64748b; --paper:#f7f9fc; --line:#dce4ef; --blue:#2463eb; --amber:#b45309; --red:#c2410c; --green:#15803d; }
-    * { box-sizing:border-box; } body { margin:0; font:16px/1.55 system-ui,"Microsoft YaHei",sans-serif; color:var(--ink); background:var(--paper); }
+    * { box-sizing:border-box; } html,body { overflow-x:hidden; } body { margin:0; font:16px/1.55 system-ui,"Microsoft YaHei",sans-serif; color:var(--ink); background:var(--paper); }
     main { max-width:1080px; margin:auto; padding:48px 28px 64px; } .eyebrow { color:var(--blue); font-weight:700; letter-spacing:.08em; font-size:13px; }
     h1 { font-size:clamp(32px,5vw,56px); line-height:1.12; margin:10px 0 14px; } .lead { color:var(--muted); font-size:19px; max-width:720px; }
     .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:34px 0; } .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; }
     .number { font-size:36px; font-weight:800; line-height:1; } .label { color:var(--muted); margin-top:6px; } .match .number{color:var(--green)} .conflict .number{color:var(--amber)} .missing .number{color:var(--red)}
     section { background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px; margin-top:18px; } h2 { margin:0 0 8px; font-size:23px; } table { width:100%; border-collapse:collapse; margin-top:14px; } th,td { text-align:left; padding:14px 10px; border-bottom:1px solid var(--line); } th { color:var(--muted); font-size:13px; } .pill { display:inline-block; border-radius:999px; padding:3px 9px; font-weight:700; font-size:13px; } .ok{background:#dcfce7;color:#166534}.warn{background:#fef3c7;color:#92400e}.bad{background:#ffedd5;color:#9a3412}
-    .equation { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:18px 0 4px; font-weight:700; } .box { padding:12px 16px; background:#eff6ff; border-radius:10px; } .arrow { color:var(--blue); font-size:24px; } footer { color:var(--muted); font-size:14px; margin-top:22px; }
-    @media(max-width:700px){.cards{grid-template-columns:repeat(2,1fr)} main{padding:28px 16px} section{padding:18px} th,td{padding:10px 5px}}
+    .equation { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:18px 0 4px; font-weight:700; } .box { padding:12px 16px; background:#eff6ff; border-radius:10px; } .arrow { color:var(--blue); font-size:24px; } .actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; } .actions a { display:inline-block; border:1px solid var(--blue); border-radius:9px; padding:9px 13px; color:var(--blue); font-weight:700; text-decoration:none; } .actions a:hover,.actions a:focus { background:#eff6ff; } footer { color:var(--muted); font-size:14px; margin-top:22px; }
+    @media(max-width:700px){main{width:100%;padding:28px 16px} h1{font-size:32px;word-break:break-word}.lead{font-size:17px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:24px 0}.card{padding:14px}.number{font-size:30px}section{padding:18px}h2{font-size:21px}table{table-layout:fixed;font-size:14px}th,td{padding:10px 4px;overflow-wrap:anywhere}.pill{white-space:normal;text-align:center;padding:3px 6px}.equation{align-items:stretch}.box{width:100%;padding:10px 12px}.arrow{width:100%;text-align:center;line-height:1}.actions a{width:100%;text-align:center}}
   </style>
 </head>
 <body>
@@ -43,6 +43,10 @@
       <h2>总量相同，仍有两处需要处理</h2>
       <div class="equation"><span class="box">A：10 + 20 + 5 = 35</span><span class="arrow">⇄</span><span class="box">B：10 + 18 + 7 = 35</span></div>
       <p>数量冲突记录 B 少了 2；表 A 独有的 C 为 5，表 B 独有的 D 为 7。两侧总量恰好相等，并不会让这些差异自动消失。</p>
+      <div class="actions" aria-label="项目链接">
+        <a href="https://github.com/hang4309/table-reconciliation-kit/releases/tag/v0.1.0">下载工具（v0.1.0）</a>
+        <a href="https://github.com/hang4309/table-reconciliation-kit">查看源码（GitHub）</a>
+      </div>
     </section>
     <footer>本页展示完全合成的本地验证结果。它说明一种检查方法，不代表客户数据、业务结论或工时收益。</footer>
   </main>
